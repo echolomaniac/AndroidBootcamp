@@ -54,7 +54,7 @@ public class CountryList extends ListActivity {
 			
 		}
 		
-
+		
 		CountryListAdapter adapter = new CountryListAdapter(this,
 				R.layout.listview_item_row, data);
 		

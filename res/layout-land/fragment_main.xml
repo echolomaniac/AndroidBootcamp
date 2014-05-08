@@ -51,7 +51,12 @@
             android:layout_weight="0.25"
             android:text="@string/button_list"
             android:textSize="20sp" />
-
+ 
+ 		<include
+	        android:layout_width="match_parent"
+	        android:layout_height="15dp"
+	        android:layout_marginRight="110dp"
+	        layout="@layout/application_footer" />
     </LinearLayout>
 
 </RelativeLayout>
