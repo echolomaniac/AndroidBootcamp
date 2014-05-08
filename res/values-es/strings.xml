@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_name">Ese mucho</string>
+    <plurals name="ask_for_a_number">
+        <item quantity="zero">0 botones.</item>
+        <item quantity="one">One botón.</item>
+        <item quantity="other">%d botones.</item>
+    </plurals>
+    
+</resources>
