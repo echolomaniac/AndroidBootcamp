@@ -2,19 +2,15 @@ package com.example.helloworld.List;
 
 
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import com.example.helloworld.R;
 import com.example.helloworld.models.Country;
+import com.example.helloworld.models.CountryBuilder;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class CountryList extends ListActivity {
 	ListView countryList; 
@@ -29,8 +25,7 @@ public class CountryList extends ListActivity {
 		String[] icons = getResources().getStringArray(R.array.list_icons);
 		int[] resIDs = getIntIds(icons);
 		String[] continents = getResources().getStringArray(R.array.list_continents);
-		Country country;	
-		
+		Country country;
 		
 		int j = 0; //image counter
 		int k = 0; //continent counter
@@ -38,7 +33,11 @@ public class CountryList extends ListActivity {
 		for(int i = 0; i < countries.length; i++) {
 			if(j<10) { //10 images
 				if(k < 7) {
-					country = new Country(resIDs[j], countries[i].toString(), continents[k]);
+					country = CountryBuilder.country()
+							.withIcon(resIDs[j])
+							.withName(countries[i].toString())
+							.withDetail(continents[k])
+							.build();
 					data.add(country);
 					k++; //continent 
 				}
@@ -60,6 +59,7 @@ public class CountryList extends ListActivity {
 		
 		
 		setListAdapter(adapter);
+		
 	}
 
 	public int[] getIntIds(String[] images){

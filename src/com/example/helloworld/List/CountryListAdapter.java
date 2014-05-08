@@ -50,9 +50,9 @@ public class CountryListAdapter extends ArrayAdapter<Country> {
     	}
     	
     	Country country = data.get(position);
-    	holder.countryTextView.setText(country.name);
-    	holder.countryImageView.setImageResource(country.icon);
-    	holder.countryDetailTextView.setText(country.detail);
+    	holder.countryTextView.setText(country.getName());
+    	holder.countryImageView.setImageResource(country.getIcon());
+    	holder.countryDetailTextView.setText(country.getDetail());
     	
     	return row;
     }

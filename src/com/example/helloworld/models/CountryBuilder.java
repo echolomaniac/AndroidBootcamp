@@ -31,4 +31,25 @@ class CountryBuilderBase<GeneratorT extends CountryBuilderBase<GeneratorT>> {
     protected Country getInstance() {
         return instance;
     }
+
+    @SuppressWarnings("unchecked")
+    public GeneratorT withDetail(String aValue) {
+        instance.setDetail(aValue);
+
+        return (GeneratorT) this;
+    }
+
+    @SuppressWarnings("unchecked")
+    public GeneratorT withIcon(int aValue) {
+        instance.setIcon(aValue);
+
+        return (GeneratorT) this;
+    }
+
+    @SuppressWarnings("unchecked")
+    public GeneratorT withName(String aValue) {
+        instance.setName(aValue);
+
+        return (GeneratorT) this;
+    }
 }
