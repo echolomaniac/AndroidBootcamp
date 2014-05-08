@@ -31,7 +31,7 @@ public class AskNumberActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-			
+
 				int value = getEnteredValue();
 				Resources res = getResources();
 				String output = res.getQuantityString(R.plurals.ask_for_a_number, value, value);
@@ -45,8 +45,15 @@ public class AskNumberActivity extends Activity {
 	
 	private int getEnteredValue() {
 		int value = 0;
-		value = Integer.parseInt(numberTextField.getText().toString());
+		String enteredValue = numberTextField.getText().toString();
 		
+		if(enteredValue.equals("")) {
+			value = 0;
+		}
+		else {
+			value = Integer.parseInt(enteredValue);
+		}
+			
 		return value;
 		
 	}

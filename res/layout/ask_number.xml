@@ -32,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="107dp"
-        android:text="@string/enter_name"
+        android:text="@string/textview_ask_number"
         />
 
     <include
