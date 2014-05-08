@@ -8,6 +8,10 @@ import com.example.helloworld.R;
 import com.example.helloworld.models.Country;
 import com.example.helloworld.models.CountryBuilder;
 
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -21,10 +25,10 @@ public class CountryList extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.country_list);
 		
-		String[] countries = getResources().getStringArray(R.array.list_countries);
-		String[] icons = getResources().getStringArray(R.array.list_icons);
-		int[] resIDs = getIntIds(icons);
-		String[] continents = getResources().getStringArray(R.array.list_continents);
+		final String[] countries = getResources().getStringArray(R.array.list_countries);
+		final String[] icons = getResources().getStringArray(R.array.list_icons);
+		final int[] resIDs = getIntIds(icons);
+		final String[] continents = getResources().getStringArray(R.array.list_continents);
 		Country country;
 		
 		int j = 0; //image counter
@@ -43,12 +47,26 @@ public class CountryList extends ListActivity {
 				}
 				else {
 					k = 0;
+					
+					country = CountryBuilder.country()
+							.withIcon(resIDs[j])
+							.withName(countries[i].toString())
+							.withDetail(continents[k])
+							.build();
+					data.add(country);
 				}
 				
 				j++; //image
 			}
 			else { //reset image counter = 0
 				j = 0;
+				
+				country = CountryBuilder.country()
+						.withIcon(resIDs[j])
+						.withName(countries[i].toString())
+						.withDetail(continents[k])
+						.build();
+				data.add(country);
 			}
 			
 		}
@@ -56,10 +74,19 @@ public class CountryList extends ListActivity {
 		
 		CountryListAdapter adapter = new CountryListAdapter(this,
 				R.layout.listview_item_row, data);
+		setListAdapter(adapter);	
 		
-		
-		setListAdapter(adapter);
-		
+		countryList =(ListView) findViewById(android.R.id.list);
+		countryList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Toast.makeText(getApplicationContext(), countries[arg2].toString(), Toast.LENGTH_SHORT).show();
+			}
+			
+		});
 	}
 
 	public int[] getIntIds(String[] images){

@@ -1,6 +1,7 @@
 package com.example.helloworld.List;
 
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 
 import com.example.helloworld.R;
@@ -55,7 +56,9 @@ public class CountryListAdapter extends ArrayAdapter<Country> {
     	holder.countryDetailTextView.setText(country.getDetail());
     	
     	return row;
+    	
     }
+    
     
     static class CountryHolder {
     	ImageView countryImageView;

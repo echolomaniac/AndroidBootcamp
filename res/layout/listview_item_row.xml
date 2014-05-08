@@ -9,7 +9,9 @@
          android:layout_height="50dp"
          android:layout_alignParentLeft="true"
          android:layout_alignParentTop="true"
-         android:layout_margin="5dp" />
+         android:layout_margin="5dp"
+         android:focusable="false"
+		 android:focusableInTouchMode="false" />
 
      <TextView
          android:id="@+id/country_title"
@@ -23,7 +25,9 @@
          android:gravity="center_vertical"
          android:textColor="#000000"
          android:textSize="18sp"
-         android:textStyle="bold" />
+         android:textStyle="bold"
+         android:focusable="false"
+		 android:focusableInTouchMode="false" />
 
      <TextView
          android:id="@+id/country_detail"
@@ -34,6 +38,8 @@
          android:layout_below="@+id/country_title"
          android:gravity="center_vertical"
          android:textColor="#000000"
-         android:textSize="12sp" />
+         android:textSize="12sp"
+		 android:focusable="false"
+		 android:focusableInTouchMode="false"/>
 
 </RelativeLayout>
