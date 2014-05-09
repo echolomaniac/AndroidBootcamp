@@ -1,6 +1,8 @@
 package com.example.helloworld.models;
 
-public class Country {
+import com.example.helloworld.List.Item;
+
+public class Country implements Item {
 	private String name;
 	private int icon;
 	private String detail;
@@ -38,5 +40,11 @@ public class Country {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public Boolean isSection() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

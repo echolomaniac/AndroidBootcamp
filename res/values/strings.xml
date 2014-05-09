@@ -12,7 +12,7 @@
     <string name="button_exit">Exit</string>
     <string name="button_list">Countries</string>
     <string-array name="list_countries">
-
+		<item>section:A</item>
         <item>Afghanistan</item>
 
         <item>Albania</item>
@@ -43,6 +43,8 @@
 
         <item>Azerbaijan</item>
 
+        <item>section:B</item>
+        
         <item>Bahamas</item>
 
         <item>Bahrain</item>
@@ -79,6 +81,8 @@
 
         <item>Burundi</item>
 
+        <item>section:C</item>
+        
         <item>Cambodia</item>
 
         <item>Cameroon</item>
@@ -104,7 +108,7 @@
         <item>Colombia</item>
 
         <item>Comoros</item>
-
+        
         <item>Democratic Republic of the Congo (Kinshasa)</item>
 
         <item>Congo, Republic of(Brazzaville)</item>
@@ -123,6 +127,8 @@
 
         <item>Czech Republic</item>
 
+        <item>section:D</item>
+        
         <item>Denmark</item>
 
         <item>Djibouti</item>
@@ -131,6 +137,8 @@
 
         <item>Dominican Republic</item>
 
+       	<item>section:E</item>
+        
         <item>East Timor (Timor-Leste)</item>
 
         <item>Ecuador</item>
@@ -147,6 +155,8 @@
 
         <item>Ethiopia</item>
 
+        <item>section:F</item>
+        
         <item>Falkland Islands</item>
 
         <item>Faroe Islands</item>
@@ -163,6 +173,8 @@
 
         <item>French Southern Territories</item>
 
+        <item>section:G</item>
+        
         <item>Gabon</item>
 
         <item>Gambia</item>
@@ -195,6 +207,8 @@
 
         <item>Guyana</item>
 
+        <item>section:H</item>
+        
         <item>Haiti</item>
 
         <item>Holy See</item>
@@ -205,6 +219,8 @@
 
         <item>Hungary</item>
 
+        <item>section:I</item>
+        
         <item>Iceland</item>
 
         <item>India</item>
@@ -221,12 +237,16 @@
 
         <item>Italy</item>
 
+        <item>section:J</item>
+        
         <item>Jamaica</item>
 
         <item>Japan</item>
 
         <item>Jordan</item>
 
+        <item>section:K</item>
+        
         <item>Kazakhstan</item>
 
         <item>Kenya</item>
@@ -243,6 +263,8 @@
 
         <item>Kyrgyzstan</item>
 
+        <item>section:L</item>
+        
         <item>Lao, People\'s Democratic Republic</item>
 
         <item>Latvia</item>
@@ -261,6 +283,8 @@
 
         <item>Luxembourg</item>
 
+        <item>section:M</item>
+        
         <item>Macau</item>
 
         <item>Macedonia, Rep. of</item>
@@ -307,6 +331,8 @@
 
         <item>Myanmar, Burma</item>
 
+        <item>section:N</item>
+        
         <item>Namibia</item>
 
         <item>Nauru</item>
@@ -333,8 +359,12 @@
 
         <item>Norway</item>
 
+        <item>section:O</item>
+        
         <item>Oman</item>
 
+        <item>section:P</item>
+        
         <item>Pakistan</item>
 
         <item>Palau</item>
@@ -359,8 +389,12 @@
 
         <item>Puerto Rico</item>
 
+        <item>section:Q</item>
+        
         <item>Qatar</item>
 
+        <item>section:R</item>
+        
         <item>Reunion Island</item>
 
         <item>Romania</item>
@@ -369,6 +403,8 @@
 
         <item>Rwanda</item>
 
+        <item>section:S</item>
+        
         <item>Saint Kitts and Nevis</item>
 
         <item>Saint Lucia</item>
@@ -421,6 +457,8 @@
 
         <item>Syria, Syrian Arab Republic</item>
 
+        <item>section:T</item>
+        
         <item>Taiwan (Republic of China)</item>
 
         <item>Tajikistan</item>
@@ -451,6 +489,8 @@
 
         <item>Tuvalu</item>
 
+        <item>section:U</item>
+        
         <item>Uganda</item>
 
         <item>Ukraine</item>
@@ -465,6 +505,8 @@
 
         <item>Uzbekistan</item>
 
+        <item>section:V</item>
+        
         <item>Vanuatu</item>
 
         <item>Vatican City State (Holy See)</item>
@@ -477,12 +519,20 @@
 
         <item>Virgin Islands (U.S.)</item>
 
+        <item>section:W</item>
+        
         <item>Wallis and Futuna Islands</item>
 
         <item>Western Sahara</item>
 
+        <item>section:X</item>
+        
+        <item>section:Y</item>
+        
         <item>Yemen</item>
 
+        <item>section:Z</item>
+        
         <item>Zambia</item>
 
         <item>Zimbabwe</item>

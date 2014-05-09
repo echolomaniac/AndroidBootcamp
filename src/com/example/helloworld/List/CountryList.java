@@ -7,7 +7,10 @@ import java.util.ArrayList;
 import com.example.helloworld.R;
 import com.example.helloworld.models.Country;
 import com.example.helloworld.models.CountryBuilder;
+import com.example.helloworld.models.CountrySection;
+import com.example.helloworld.models.CountrySectionBuilder;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -18,6 +21,8 @@ import android.widget.ListView;
 
 public class CountryList extends ListActivity {
 	ListView countryList; 
+	Country country;
+	CountrySection section;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,24 +34,47 @@ public class CountryList extends ListActivity {
 		final String[] icons = getResources().getStringArray(R.array.list_icons);
 		final int[] resIDs = getIntIds(icons);
 		final String[] continents = getResources().getStringArray(R.array.list_continents);
-		Country country;
 		
 		int j = 0; //image counter
 		int k = 0; //continent counter
-		ArrayList<Country> data = new ArrayList<Country>();
+		ArrayList data = new ArrayList();
+		
 		for(int i = 0; i < countries.length; i++) {
-			if(j<10) { //10 images
-				if(k < 7) {
-					country = CountryBuilder.country()
-							.withIcon(resIDs[j])
-							.withName(countries[i].toString())
-							.withDetail(continents[k])
-							.build();
-					data.add(country);
-					k++; //continent 
+			if(countries[i].startsWith("section:")) {
+				Log.v("SECTION", countries[i].toString());
+				section = CountrySectionBuilder
+						.countrySection()
+						.withTitle(countries[i].toString())
+						.build();
+				data.add(section);
+			}
+			else {
+				Log.v("ITEM", countries[i].toString());
+				if(j<10) { //10 images
+					if(k < 7) {
+						country = CountryBuilder.country()
+								.withIcon(resIDs[j])
+								.withName(countries[i].toString())
+								.withDetail(continents[k])
+								.build();
+						data.add(country);
+						k++; //continent 
+					}
+					else {
+						k = 0;
+						
+						country = CountryBuilder.country()
+								.withIcon(resIDs[j])
+								.withName(countries[i].toString())
+								.withDetail(continents[k])
+								.build();
+						data.add(country);
+					}
+					
+					j++; //image
 				}
-				else {
-					k = 0;
+				else { //reset image counter = 0
+					j = 0;
 					
 					country = CountryBuilder.country()
 							.withIcon(resIDs[j])
@@ -55,25 +83,12 @@ public class CountryList extends ListActivity {
 							.build();
 					data.add(country);
 				}
-				
-				j++; //image
-			}
-			else { //reset image counter = 0
-				j = 0;
-				
-				country = CountryBuilder.country()
-						.withIcon(resIDs[j])
-						.withName(countries[i].toString())
-						.withDetail(continents[k])
-						.build();
-				data.add(country);
 			}
 			
 		}
 		
 		
-		CountryListAdapter adapter = new CountryListAdapter(this,
-				R.layout.listview_item_row, data);
+		CountryListAdapter adapter = new CountryListAdapter(this, data);
 		setListAdapter(adapter);	
 		
 		countryList =(ListView) findViewById(android.R.id.list);
