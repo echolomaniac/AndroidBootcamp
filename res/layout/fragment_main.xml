@@ -25,7 +25,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="#0000"
-        android:src="@drawable/france_icon" />
+        android:src="@drawable/star_button" 
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"/>
 
     <TextView
         android:id="@+id/textView1"
@@ -51,15 +53,18 @@
         android:layout_alignRight="@+id/nameEditText"
         android:layout_below="@+id/nameEditText"
         android:text="@string/button_list"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:drawableTop="@drawable/star_button"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/helloButton"
         android:layout_width="160dp"
         android:layout_height="335dp"
-        android:layout_alignBaseline="@+id/listButton"
-        android:layout_alignBottom="@+id/listButton"
         android:layout_alignLeft="@+id/nameEditText"
+        android:layout_alignTop="@+id/listButton"
+        android:drawableTop="@drawable/star_button"
+        android:gravity="center"
         android:text="@string/hello_button"
         android:textSize="20sp" />
 
