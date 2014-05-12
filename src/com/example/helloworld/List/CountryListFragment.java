@@ -8,16 +8,14 @@ import com.example.helloworld.models.CountrySection;
 import com.example.helloworld.models.builders.CountryBuilder;
 import com.example.helloworld.models.builders.CountrySectionBuilder;
 
+import android.app.AlertDialog;
 import android.app.ListFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class CountryListFragment extends ListFragment {
 	ListView countryList; 
@@ -100,7 +98,9 @@ public class CountryListFragment extends ListFragment {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
 		
-		Toast.makeText(getActivity().getApplicationContext(), countriesArray[position].toString(), Toast.LENGTH_SHORT).show();
+		//Toast.makeText(getActivity().getApplicationContext(), countriesArray[position].toString(), Toast.LENGTH_SHORT).show();
+		// 1. Instantiate an AlertDialog.Builder with its constructor
+		setAlertDialog(position);
 	}
 	
 	public int[] getIntIds(String[] images){
@@ -109,6 +109,28 @@ public class CountryListFragment extends ListFragment {
 	        temp[i] = getResources().getIdentifier(images[i] , "drawable", getActivity().getPackageName());
 	    }
 	    return temp;
+	}
+	
+	private void setAlertDialog(int position) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+		// 2. Chain together various setter methods to set the dialog characteristics
+		builder.setMessage(countriesArray[position].toString())
+		       .setTitle("Country");
+		builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	               // User clicked OK button
+	           }
+	       });
+		builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+	           public void onClick(DialogInterface dialog, int id) {
+	               // User cancelled the dialog
+	           }
+	       });
+
+		// 3. Get the AlertDialog from create()
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 
 }
