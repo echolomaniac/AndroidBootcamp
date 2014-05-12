@@ -15,11 +15,25 @@
         android:layout_alignParentLeft="true"
         android:orientation="vertical" >
 
-        <ImageButton android:id="@+id/france_icon" 
-            android:layout_width="match_parent" 
-            android:layout_height="0dp" 
-            android:layout_weight="0.3"
-            android:src="@drawable/france_icon" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/ask_a_number"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:text="@string/button_askNumber" />
+
+            <Button
+                android:id="@+id/employee_button"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:text="@string/button_employee" />
+
+        </LinearLayout>
         
         <TextView
             android:id="@+id/textView1"

@@ -18,25 +18,13 @@
         android:ems="10"
         android:hint="@string/hint_enter_name" />
 
-    <ImageButton
-        android:id="@+id/france_icon"
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/ask_a_number"
+        android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="#0000"
-        android:src="@drawable/star_button" 
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"/>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/france_icon"
-        android:layout_below="@+id/france_icon"
-        android:layout_marginTop="40dp"
-        android:text="@string/enter_name" />
+        android:text="@string/button_askNumber"/>
 
     <include
         android:id="@+id/include1"
@@ -67,5 +55,23 @@
         android:gravity="center"
         android:text="@string/hello_button"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ask_a_number"
+        android:layout_below="@+id/ask_a_number"
+        android:layout_marginTop="21dp"
+        android:text="@string/enter_name" />
+
+    <Button
+        android:id="@+id/employee_button"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/ask_a_number"
+        android:layout_alignBottom="@+id/ask_a_number"
+        android:layout_alignRight="@+id/textView1"
+        android:text="@string/button_employee" />
 
 </RelativeLayout>

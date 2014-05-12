@@ -31,7 +31,6 @@ public class CountryListAdapter extends ArrayAdapter<Country> {
 		
 		inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
-
 	
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -39,8 +38,6 @@ public class CountryListAdapter extends ArrayAdapter<Country> {
     	CountryHolder holder = null;
     	SectionHolder section = null;
     	final Item item = (Item)data.get(position);
-    	
-    	Log.v("TEST", "ROW:" + row);
     	//if(row == null) {
     		if(item != null) {
     			if(item.isSection()) {
@@ -56,11 +53,9 @@ public class CountryListAdapter extends ArrayAdapter<Country> {
 		    		section.sectionTitle = (TextView)row.findViewById(R.id.section_header);
 		    		
 		    		section.sectionTitle.setText(sect.getTitle().substring(8));
-		    		Log.v("TEST", "SECTION:" + item);
 		    		row.setTag(section);
     			}
     			else {
-    				Log.v("TEST", "ITEM:" + item);
     				Country country = (Country)item;
     				
 		    		row = inflater.inflate(R.layout.listview_item_row, parent, false);

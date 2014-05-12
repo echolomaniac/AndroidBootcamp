@@ -1,23 +1,25 @@
 package com.example.helloworld;
 
+
+import com.example.helloworld.DisplayName.DisplayInputActivity;
 import com.example.helloworld.List.CountryList;
 import com.example.helloworld.askNumber.AskNumberActivity;
+import com.example.helloworld.employee.EmployeeList;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 	
@@ -32,8 +34,66 @@ public class MainActivity extends Activity {
              FragmentTransaction ft = getFragmentManager().beginTransaction();
              ft.add(R.id.container, newFragment).commit();
         }
+        
+        Log.v("onCreate", "onCreate");
+    }
+    
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+    	// TODO Auto-generated method stub
+    	super.onSaveInstanceState(outState);
+    	
+    	Log.v("onSaveInstanceState", ""+outState);
+    }
+    
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    	// TODO Auto-generated method stub
+    	super.onRestoreInstanceState(savedInstanceState);
+    	Log.v("onRestoreInstanceState", ""+savedInstanceState);
+    }
+    @Override
+    protected void onStart() {
+    	// TODO Auto-generated method stub
+    	super.onStart();
+    	Log.v("onStart", "onStart");
+    }
+    
+    @Override
+    protected void onRestart() {
+    	// TODO Auto-generated method stub
+    	super.onRestart();
+    	Log.v("onRestart", "onRestart");
+    }
+    
+    @Override
+    protected void onResume() {
+    	// TODO Auto-generated method stub
+    	super.onResume();
+    	Log.v("onResume", "onResume");
+    }
+    
+    @Override
+    protected void onPause() {
+    	// TODO Auto-generated method stub
+    	super.onPause();
+    	Log.v("onPause", "onPause");
+    }
+    
+    @Override
+    protected void onStop() {
+    	// TODO Auto-generated method stub
+    	super.onStop();
+    	Log.v("onStop", "onStop");
     }
  
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	Log.v("onDestroy", "onDestroy");
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         
@@ -60,7 +120,8 @@ public class MainActivity extends Activity {
     public static class PlaceholderFragment extends Fragment {
     	Button helloButton;
     	Button countryButton;
-    	ImageButton numberButton;
+    	Button numberButton;
+    	Button employeeButton;
     	EditText nameEditText;
     	
         public PlaceholderFragment() {
@@ -103,13 +164,12 @@ public class MainActivity extends Activity {
 		        	//create intent
 		        	Intent intent = new Intent(getActivity(), DisplayInputActivity.class);
 		        	intent.putExtra("name", input);
-
 		        	startActivity(intent);
 				}
         		
         	});
         	
-        	numberButton = (ImageButton)rootView.findViewById(R.id.france_icon);
+        	numberButton = (Button)rootView.findViewById(R.id.ask_a_number);
         	numberButton.setOnClickListener(new OnClickListener() {
 				
 				@Override
@@ -117,6 +177,18 @@ public class MainActivity extends Activity {
 					// TODO Auto-generated method stub
 					//create intent
 		        	Intent intent = new Intent(getActivity(), AskNumberActivity.class);
+		        	startActivity(intent);
+				}
+			});
+        	
+        	employeeButton = (Button)rootView.findViewById(R.id.employee_button);
+        	employeeButton.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					//create intent
+		        	Intent intent = new Intent(getActivity(), EmployeeList.class);
 		        	startActivity(intent);
 				}
 			});

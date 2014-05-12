@@ -567,6 +567,45 @@
     </plurals>
     <string name="textview_name">Jerico D. delos Santos</string>
     <string name="textview_ask_number">Please enter a number</string>
+    <string name="button_askNumber">Ask A Number</string>
+    <string name="button_employee">Employees</string>
+    <string-array name="last_name_list">
+        <item >Abad</item>
+        <item >Bondad</item>
+        <item >Cortez</item>
+        <item >De Leon</item>
+        <item >Estrada</item>
+        <item >Filomeno</item>
+        <item >Garcia</item>
+        <item >Hombres</item>
+        <item >Ilao</item>
+        <item >Jamias</item>
+    </string-array>
+    <string-array name="first_name_list">
+        <item >Ben</item>
+        <item >Olga</item>
+        <item >Victor</item>
+        <item >Abel</item>
+        <item >Susan</item>
+        <item >Helen</item>
+        <item >Pam</item>
+        <item >Celine</item>
+        <item >Xander</item>
+        <item >Yeng</item>
+    </string-array>
+    <integer-array name="id_number_list">
+        <item >123</item>
+        <item >543</item>
+        <item >363</item>
+        <item >987</item>
+        <item >236</item>
+        <item >095</item>
+        <item >643</item>
+        <item >262</item>
+        <item >777</item>
+        <item >590</item>
+    </integer-array>
+    <string name="button_sort">Sort</string>
   
 
 </resources>

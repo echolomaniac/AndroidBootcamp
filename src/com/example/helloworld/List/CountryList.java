@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 import com.example.helloworld.R;
 import com.example.helloworld.models.Country;
-import com.example.helloworld.models.CountryBuilder;
 import com.example.helloworld.models.CountrySection;
-import com.example.helloworld.models.CountrySectionBuilder;
+import com.example.helloworld.models.builders.CountryBuilder;
+import com.example.helloworld.models.builders.CountrySectionBuilder;
 
 import android.util.Log;
 import android.view.View;
@@ -41,7 +41,6 @@ public class CountryList extends ListActivity {
 		
 		for(int i = 0; i < countries.length; i++) {
 			if(countries[i].startsWith("section:")) {
-				Log.v("SECTION", countries[i].toString());
 				section = CountrySectionBuilder
 						.countrySection()
 						.withTitle(countries[i].toString())
@@ -49,7 +48,6 @@ public class CountryList extends ListActivity {
 				data.add(section);
 			}
 			else {
-				Log.v("ITEM", countries[i].toString());
 				if(j<10) { //10 images
 					if(k < 7) {
 						country = CountryBuilder.country()
