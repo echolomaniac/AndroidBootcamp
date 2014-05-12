@@ -195,17 +195,5 @@ public class MainActivity extends Activity {
         	
             return rootView;
         }
-        
-
-        public void onHelloPressed(View v) {
-        	
-        	
-        }
-        
-        public void onCancelPressed(View v) {
-        	
-        }
     }
-
-    
 }

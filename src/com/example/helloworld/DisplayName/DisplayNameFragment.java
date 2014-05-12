@@ -1,8 +1,6 @@
 package com.example.helloworld.DisplayName;
 
 import com.example.helloworld.R;
-import com.example.helloworld.R.id;
-import com.example.helloworld.R.layout;
 
 import android.app.Fragment;
 import android.content.Intent;
