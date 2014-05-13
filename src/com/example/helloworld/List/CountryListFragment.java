@@ -8,6 +8,7 @@ import com.example.helloworld.models.CountrySection;
 import com.example.helloworld.models.builders.CountryBuilder;
 import com.example.helloworld.models.builders.CountrySectionBuilder;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListFragment;
 import android.content.DialogInterface;
@@ -22,6 +23,8 @@ public class CountryListFragment extends ListFragment {
 	Country country;
 	CountrySection section;
 	String[] countriesArray = null;
+	String[] continentArray = null;
+	CountryListFragmentInterface countryInterface;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +38,7 @@ public class CountryListFragment extends ListFragment {
 		final String[] icons = getResources().getStringArray(R.array.list_icons);
 		final int[] resIDs = getIntIds(icons);
 		final String[] continents = getResources().getStringArray(R.array.list_continents);
+		continentArray = continents;
 		
 		int j = 0; //image counter
 		int k = 0; //continent counter
@@ -88,7 +92,7 @@ public class CountryListFragment extends ListFragment {
 		
 		
 		CountryListAdapter adapter = new CountryListAdapter(getActivity().getApplicationContext(), data);
-		setListAdapter(adapter);	
+		setListAdapter(adapter);
 		
 		return rootView;
 	}
@@ -98,9 +102,11 @@ public class CountryListFragment extends ListFragment {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
 		
-		//Toast.makeText(getActivity().getApplicationContext(), countriesArray[position].toString(), Toast.LENGTH_SHORT).show();
-		// 1. Instantiate an AlertDialog.Builder with its constructor
-		setAlertDialog(position);
+		//alert dialog
+		//setAlertDialog(position);
+		
+		//set fragment details
+		countryInterface.onItemClick(countriesArray[position], countriesArray[position]);
 	}
 	
 	public int[] getIntIds(String[] images){
@@ -131,6 +137,23 @@ public class CountryListFragment extends ListFragment {
 		// 3. Get the AlertDialog from create()
 		AlertDialog dialog = builder.create();
 		dialog.show();
+	}
+	
+	@Override
+	public void onAttach(Activity activity) {
+		// TODO Auto-generated method stub
+		super.onAttach(activity);
+		
+		try {
+			countryInterface = (CountryListFragmentInterface) activity;
+		}catch (ClassCastException e) {
+			throw new ClassCastException(activity.toString() + " must implement");
+		}
+	}
+	
+	public interface CountryListFragmentInterface {
+		public void onItemClick(String name, String details);
+
 	}
 
 }

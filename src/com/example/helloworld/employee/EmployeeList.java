@@ -9,7 +9,7 @@ import com.example.helloworld.models.builders.EmployeeBuilder;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.Adapter;
+import android.widget.SimpleAdapter;
 
 public class EmployeeList extends ListActivity {
 	ArrayList<String> fullname = new ArrayList<String>();
@@ -17,7 +17,7 @@ public class EmployeeList extends ListActivity {
 	String[] first = null;
 	int[] id = null;
 	Employee employee;
-	ArrayList<HashMap<Integer, Employee>> employees;
+	ArrayList<HashMap<String, Employee>> employees;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +28,14 @@ public class EmployeeList extends ListActivity {
 		last = getResources().getStringArray(R.array.last_name_list);
 		first = getResources().getStringArray(R.array.first_name_list);
 		id = getResources().getIntArray(R.array.id_number_list);
-		employees = new ArrayList<HashMap<Integer, Employee>>();
+		employees = new ArrayList<HashMap<String, Employee>>();
 		
 		fullname = setFullName();
 		setEmployees();
 		
-		
+
+		   EmployeeListSimpleAdapter adapter = new EmployeeListSimpleAdapter(this, employees , R.layout.employee_row_item, new String[] {"name"}, new int[] {0}); 
+		   setListAdapter(adapter);
 	}
 	
 	private ArrayList<String> setFullName() {
@@ -51,7 +53,7 @@ public class EmployeeList extends ListActivity {
 	private void setEmployees() {
 		
 		for(int i = 0; i < id.length; i++) {
-			HashMap<Integer, Employee> map = new HashMap<Integer, Employee>();
+			HashMap<String, Employee> map = new HashMap<String, Employee>();
 			
 			employee = EmployeeBuilder.employee()
 					.withFirstName(first[i])
@@ -59,7 +61,8 @@ public class EmployeeList extends ListActivity {
 					.withIdNumber(id[i])
 					.build();
 			
-			map.put(id[i], employee);
+			
+			map.put("name", employee);
 			employees.add(map);
 		}
 	}

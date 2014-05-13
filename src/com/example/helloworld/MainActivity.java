@@ -3,6 +3,7 @@ package com.example.helloworld;
 
 import com.example.helloworld.DisplayName.DisplayInputActivity;
 import com.example.helloworld.List.CountryList;
+import com.example.helloworld.TwoFragments.TwoFragmentActivity;
 import com.example.helloworld.askNumber.AskNumberActivity;
 import com.example.helloworld.employee.EmployeeList;
 
@@ -122,6 +123,7 @@ public class MainActivity extends Activity {
     	Button countryButton;
     	Button numberButton;
     	Button employeeButton;
+    	Button fragmentButton;
     	EditText nameEditText;
     	
         public PlaceholderFragment() {
@@ -190,6 +192,17 @@ public class MainActivity extends Activity {
 					//create intent
 		        	Intent intent = new Intent(getActivity(), EmployeeList.class);
 		        	startActivity(intent);
+				}
+			});
+        	
+        	fragmentButton = (Button)rootView.findViewById(R.id.two_fragment_button);
+        	fragmentButton.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent(getActivity(), TwoFragmentActivity.class);
+					startActivity(intent);
 				}
 			});
         	

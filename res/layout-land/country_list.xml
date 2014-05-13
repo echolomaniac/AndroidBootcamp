@@ -4,25 +4,26 @@
 
     <include
         android:layout_width="match_parent"
-        android:layout_height="15dp"
+        android:layout_height="25dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="11dp"
         layout="@layout/application_footer" />
 
     <fragment
         android:id="@+id/fragment1"
         android:name="com.example.helloworld.List.CountryListFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="350dp"
+        android:layout_width="350dp"
+        android:layout_height="310dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
 
     <fragment
         android:id="@+id/fragment2"
         android:name="com.example.helloworld.List.CountryDetailsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="165dp"
-        android:layout_below="@+id/fragment1" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fragment1"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/fragment1" />
 
 </RelativeLayout>

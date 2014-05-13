@@ -1,16 +1,13 @@
 package com.example.helloworld.List;
 
 
-import java.security.PublicKey;
 import java.util.ArrayList;
 
 import com.example.helloworld.R;
 import com.example.helloworld.models.Country;
 import com.example.helloworld.models.CountrySection;
 
-import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
